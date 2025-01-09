@@ -2,8 +2,6 @@ package com.burnsena.chess;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.*;
 
 @Configuration
@@ -16,7 +14,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
     }
 
     @Bean
-    public WebSocketHandler handler(){
-        return new GameWebSocketHandler();
+    public org.springframework.web.socket.WebSocketHandler handler(){
+        return new WebSocketHandler();
     }
 }
