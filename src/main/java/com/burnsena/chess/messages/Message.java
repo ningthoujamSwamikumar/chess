@@ -1,8 +1,11 @@
 package com.burnsena.chess.messages;
 
-import java.util.Map;
+import com.burnsena.chess.GameManager;
+import org.springframework.web.socket.WebSocketSession;
+
+import java.io.IOException;
 
 public interface Message {
-    public MessageType type();
-    public void handle();
+    MessageType type();
+    void handle(GameManager gameManager, WebSocketSession session) throws IOException;
 }

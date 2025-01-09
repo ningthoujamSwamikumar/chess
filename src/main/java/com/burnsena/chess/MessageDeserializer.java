@@ -1,6 +1,9 @@
-package com.burnsena.chess.messages;
+package com.burnsena.chess;
 
-import com.fasterxml.jackson.core.JacksonException;
+import com.burnsena.chess.messages.InitMessage;
+import com.burnsena.chess.messages.Message;
+import com.burnsena.chess.messages.MessageType;
+import com.burnsena.chess.messages.MoveMessage;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -19,7 +22,7 @@ public class MessageDeserializer extends StdDeserializer<Message> {
     }
 
     @Override
-    public Message deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public Message deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
         MessageType type = MessageType.valueOf(node.get("type").asText());
 

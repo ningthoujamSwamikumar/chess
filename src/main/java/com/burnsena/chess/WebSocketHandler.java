@@ -1,7 +1,6 @@
 package com.burnsena.chess;
 
 import com.burnsena.chess.messages.Message;
-import com.burnsena.chess.messages.MessageDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.stereotype.Component;
